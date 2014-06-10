@@ -41,6 +41,7 @@ template "/etc/nginx/sites-available/grafana" do
     :graphite_port    => node['grafana']['graphite_port'],
     :server_name      => node['grafana']['webserver_hostname'],
     :server_aliases   => node['grafana']['webserver_aliases'],
+    :server_htpasswd  => node['grafana']['webserver_htpasswd'],
     :grafana_dir      => node['grafana']['web_dir'],
     :listen_address   => node['grafana']['webserver_listen'],
     :listen_port      => node['grafana']['webserver_port'],

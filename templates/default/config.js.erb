@@ -22,24 +22,20 @@ function (Settings) {
      * in nginx or apache for cross origin domain sharing to work (CORS).
      * Check install documentation on github
      */
-    graphiteUrl: window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/_graphite",
+    //graphiteUrl: window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/_graphite",
 
     /**
      * Multiple graphite servers? Comment out graphiteUrl and replace with something like this:
+     */
 
       datasources: {
-        data_center_us: {
+        graphite: {
           type: 'graphite',
-          url: 'http://<graphite_url>',
-          default: true
+          url: window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/_graphite",
+          default: true,
+          render_method: '<%= node['grafana']['graphite_render_method'] %>'
         },
-        data_center_eu: {
-          type: 'graphite',
-          url: 'http://<graphite_url>',
-          render_method: 'GET' // optional, use this to change render calls from POST to GET
-        }
       },
-    */
 
     default_route: '/dashboard/file/default.json',
 

@@ -17,3 +17,5 @@ Berksfile.lock
 Gemfile.lock
 bin/*
 .bundle/*
+
+Vagrantfile
